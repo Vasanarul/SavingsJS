@@ -8,7 +8,7 @@ class App extends React.Component {
 
   render() {
     return (
-        <div>Financing</div>
+        <div>Financing is life</div>
       )
   }
 }
