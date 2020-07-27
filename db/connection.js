@@ -1,15 +1,19 @@
-const Money = require('mongodb').MongoClient
+var mysql = require('mysql')
 
-Money.connect('mongodb://localhost:27017/finance', function(err, db) {
-  if (err) {
-    throw err
-  }
-  console.log('MongoDB connection established!')
-  var userInfo = db.db("finance");
-  userInfo.createCollection("users", function(err, res) {
-    if (err) throw err;
-    console.log("Collection created!")
-  })
+var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'FINANCE'
 })
 
-module.exports = Money;
+connection.connect()
+
+connection.query('describe savings_goal', function (err, rows, fields) {
+  if (err) {
+    throw err;
+  }
+  console.log('savings_goal is accessible')
+});
+
+module.exports = connection;
