@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Form from './Form.jsx';
+import Userlist from './Userlist.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -47,7 +48,7 @@ class App extends React.Component {
       return <div>Loading...</div>;
     } else {
     return (<div>
-      <div>{this.state.info[0].name}</div>
+      <div><Userlist users={this.state.info}/></div>
       <br></br>
       <br></br>
       <div><Form /></div>
