@@ -9,11 +9,13 @@ var connection = mysql.createConnection({
 
 connection.connect()
 
-connection.query('describe savings_goal', function (err, rows, fields) {
+connection.query('describe savings', function (err, rows, fields) {
   if (err) {
     throw err;
   }
-  console.log('savings_goal is accessible')
+  console.log('savings is accessible')
 });
 
 module.exports = connection;
+
+// CREATE TABLE savings (name VARCHAR(30) NOT NULL, goal INT NOT NULL, current INT NOT NULL, date DATE NOT NULL);
