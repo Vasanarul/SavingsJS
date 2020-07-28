@@ -16,10 +16,15 @@ class Remove extends React.Component {
 
   removeUser() {
     axios.delete('/api/users', {
-        name: this.state.name
+        data: {
+          name: `${this.state.name}`
+        }
     })
     .then(result => {
       console.log(result)
+    })
+    .catch(error => {
+      console.log(error)
     })
   }
 
@@ -32,7 +37,6 @@ class Remove extends React.Component {
 
   handleSubmit(event) {
     this.removeUser()
-    event.preventDefault()
     console.log(this.state.name)
   }
 
@@ -40,7 +44,7 @@ class Remove extends React.Component {
   render() {
     return (
       <div>
-        We're sorry to see you go! Enter your name here to delete your info:
+        We're sorry to see you go! Enter your name here to delete your information:
         <form onSubmit={this.handleSubmit}>
           <label>
           <br></br>

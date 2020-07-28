@@ -4,6 +4,8 @@ import Form from './Form.jsx';
 import Remove from './Remove.jsx';
 import Userlist from './Userlist.jsx';
 
+import Background from '../styles/background.js';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -48,13 +50,16 @@ class App extends React.Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-    return (<div>
+    return (
+    <div>
+      <Background>
       <Userlist users={this.state.info}/>
       <br></br>
       <br></br>
       <Form />
       <br></br>
       <Remove />
+      </Background>
     </div>
       )
     }

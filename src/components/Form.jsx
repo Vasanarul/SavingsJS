@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import SignUp from '../styles/signup.js';
 
 class Form extends React.Component {
   constructor(props) {
@@ -64,7 +65,7 @@ class Form extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        SIGN UP BELOW
+        <SignUp>New to SavingsJS?
         <br></br>
         <br></br>
         <label>
@@ -100,6 +101,7 @@ class Form extends React.Component {
         <br></br>
         <br></br>
         <input type="submit" value="Submit" />
+        </SignUp>
       </form>
     )
   }
