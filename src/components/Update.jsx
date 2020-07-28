@@ -40,9 +40,10 @@ class Update extends React.Component {
   render() {
     return (
       <div>
-        {this.props.user} have you made more money? Click this button:
+        {this.props.user} have you made more money? Tell us about it =>
         <form onSubmit={this.handleSubmit}>
           <label>
+          <br></br>
             The spoils:
             <input type="number" value={this.state.value} onChange={this.handleNew}/>
           </label>

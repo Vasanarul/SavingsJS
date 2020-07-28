@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Form from './Form.jsx';
+import Remove from './Remove.jsx';
 import Userlist from './Userlist.jsx';
 
 class App extends React.Component {
@@ -53,6 +54,7 @@ class App extends React.Component {
       <br></br>
       <Form />
       <br></br>
+      <Remove />
     </div>
       )
     }

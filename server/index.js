@@ -42,7 +42,16 @@ app.patch('/api/users', (req, res) => {
   })
 });
 
-// app.delete()
+app.delete('/api/users', (req, res) => {
+  console.log(req.body);
+  db.query(`DELETE from savings WHERE name = '${req.body.name}';`, function(err, rows) {
+    if (err) {
+      throw err;
+    }
+    console.log(rows);
+    res.send(rows)
+  })
+});
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 
