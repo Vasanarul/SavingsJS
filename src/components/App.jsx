@@ -48,10 +48,11 @@ class App extends React.Component {
       return <div>Loading...</div>;
     } else {
     return (<div>
-      <div><Userlist users={this.state.info}/></div>
+      <Userlist users={this.state.info}/>
       <br></br>
       <br></br>
-      <div><Form /></div>
+      <Form />
+      <br></br>
     </div>
       )
     }

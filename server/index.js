@@ -31,4 +31,19 @@ app.post('/api/users', (req, res) => {
   })
 });
 
+app.patch('/api/users', (req, res) => {
+  console.log(req.body);
+  db.query(`UPDATE savings SET current = ${req.body.current + parseInt(req.body.new)} WHERE name = '${req.body.name}';`, function(err, rows) {
+    if (err) {
+      throw err;
+    }
+    console.log(rows);
+    res.send(rows);
+  })
+});
+
+// app.delete()
+
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+
+// `UPDATE savings, (SELECT name from savings WHERE name = '${req.body.name}') AS original SET current = ${req.body.current + 25} WHERE current = ${req.body.current};`

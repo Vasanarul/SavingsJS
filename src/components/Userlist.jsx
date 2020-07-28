@@ -1,4 +1,6 @@
 import React from 'react';
+import Update from './Update.jsx';
+import moment from 'moment';
 
 class Userlist extends React.Component {
   constructor(props) {
@@ -8,6 +10,7 @@ class Userlist extends React.Component {
       clickedState: false,
       selectedName: null,
       date: null,
+      current: null,
       remaining: null
     }
 
@@ -18,7 +21,8 @@ class Userlist extends React.Component {
     this.setState({
       clickedState: true,
       selectedName: user.name,
-      date: user.date,
+      date: moment(user.date).format('MMMM Do YYYY'),
+      current: user.current,
       remaining: (user.goal - user.current)
     })
   }
@@ -27,21 +31,27 @@ class Userlist extends React.Component {
     if (this.state.clickedState) {
       return (
         <div>
-          <h3 type="text" >{this.state.selectedName} has {this.state.remaining} remaining to save by {this.state.date}!</h3>
+          <h3 type="text" >{this.state.selectedName} has ${this.state.remaining} remaining to save by {this.state.date}!</h3>
           <ul>
             {this.props.users.map((user, index) => (
               <li onClick={() => this.showRemaining(user)} key={index}>{user.name}</li>
             ))}
           </ul>
+          <br></br>
+          <Update user={this.state.selectedName} current={this.state.current}/>
         </div>
       )
     }
     return (
-      <ul>
-        {this.props.users.map((user, index) => (
-          <li onClick={() => this.showRemaining(user)} key={index}>{user.name}</li>
-        ))}
-      </ul>
+      <div>
+        <ul>
+          {this.props.users.map((user, index) => (
+            <li onClick={() => this.showRemaining(user)} key={index}>{user.name}</li>
+          ))}
+        </ul>
+        <br></br>
+        <Update user={this.state.selectedName} current={this.state.current}/>
+      </div>
     )
   }
 }

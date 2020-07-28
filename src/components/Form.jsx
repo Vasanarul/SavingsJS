@@ -64,6 +64,9 @@ class Form extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        SIGN UP BELOW
+        <br></br>
+        <br></br>
         <label>
           Name:
           <br></br>
@@ -91,7 +94,7 @@ class Form extends React.Component {
         <label>
           Goal Date:
           <br></br>
-          <input type="text" value={this.state.value} onChange={this.handleTime}/>
+          <input type="date" value={this.state.value} onChange={this.handleTime}/>
         </label>
         <br></br>
         <br></br>
