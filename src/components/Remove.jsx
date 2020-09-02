@@ -44,7 +44,7 @@ class Remove extends React.Component {
   render() {
     return (
       <div>
-        We're sorry to see you go! Enter your name here to delete your information:
+        Trying to cash out? Enter your name here to delete your information:
         <form onSubmit={this.handleSubmit}>
           <label>
           <br></br>

@@ -77,7 +77,7 @@ class Form extends React.Component {
         <br></br>
         <br></br>
         <label>
-          Goal:
+          Savings Goal:
           <br></br>
           <input type="number" value={this.state.value} onChange={this.handleGoal}/>
         </label>
@@ -85,7 +85,7 @@ class Form extends React.Component {
         <br></br>
         <br></br>
         <label>
-          Current:
+          Current Amount:
           <br></br>
           <input type="number" value={this.state.value} onChange={this.handleCurrent}/>
         </label>
